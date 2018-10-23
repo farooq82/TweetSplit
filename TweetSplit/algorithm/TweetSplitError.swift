@@ -8,4 +8,16 @@
 
 import Foundation
 
-
+public enum TSError: LocalizedError{
+    case emptyTweet
+    case tweetNotSplitable
+    
+    public var errorDescription: String?{
+        switch self {
+        case .emptyTweet:
+            return "Tweet should not be empty"
+        case .tweetNotSplitable:
+            return "Tweet cannot be split"
+        }
+    }
+}

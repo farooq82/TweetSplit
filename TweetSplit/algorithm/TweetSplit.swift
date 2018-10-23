@@ -10,11 +10,6 @@ import Foundation
 
 public let SPACE:Character = " "
 
-public enum TweetSplitError: Error{
-    case emptyTweet
-    case tweetNotSplitable
-}
-
 extension String{
     
     /// Splits out of bound tweet into 1-n within bound tweets
@@ -24,10 +19,9 @@ extension String{
     ///   - limit: Tweet characters limit (aka bounds)
     /// - Returns: 1-n within bound tweets
     
-    
     func splitMessage(limit:Int) throws -> [String]{
         guard self.count > 0 else {
-            throw TweetSplitError.emptyTweet
+            throw TSError.emptyTweet
         }
         
         guard self.count > limit else {
@@ -44,7 +38,7 @@ extension String{
             
             if index - subTweetStart > partLimit{
                 if nearSpace <= subTweetStart{
-                    throw TweetSplitError.tweetNotSplitable
+                    throw TSError.tweetNotSplitable
                 }
                 
                 let subTweet = charMessage[subTweetStart ... nearSpace - 1]

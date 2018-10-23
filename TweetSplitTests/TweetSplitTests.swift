@@ -24,7 +24,7 @@ class TweetSplitTests: XCTestCase {
         let message = ""
         
         XCTAssertThrowsError(try message.splitMessage(limit: 50), "Cannot split") { (error) in
-            XCTAssertEqual(error as! TweetSplitError, TweetSplitError.emptyTweet)
+            XCTAssertEqual(error as! TSError, TSError.emptyTweet)
         }
     }
     
@@ -50,27 +50,27 @@ class TweetSplitTests: XCTestCase {
         XCTAssertGreaterThan(try message.splitMessage(limit: 50).count, 2)
     }
     
-    func testThatItssNotSpiltableStart() {
+    func testThatItssNotSpiltableAtStart() {
         let message = "Ican'tbelieveTweeternowsupportschunkingmymessages,soIdon'thavetodoitmyself."
         
         XCTAssertThrowsError(try message.splitMessage(limit: 50), "Cannot split") { (error) in
-            XCTAssertEqual(error as! TweetSplitError, TweetSplitError.tweetNotSplitable)
+            XCTAssertEqual(error as! TSError, TSError.tweetNotSplitable)
         }
     }
     
-    func testThatItsNotSplitableMiddle() {
+    func testThatItsNotSplitableInMiddle() {
         let message = "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Donec ullamcorper nullanonmetusauctorfringilla.Cumsociisnatoquepenatibusetmagnisdisparturientmontes,nasceturridiculusmus. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit."
         
         XCTAssertThrowsError(try message.splitMessage(limit: 50), "Cannot split") { (error) in
-            XCTAssertEqual(error as! TweetSplitError, TweetSplitError.tweetNotSplitable)
+            XCTAssertEqual(error as! TSError, TSError.tweetNotSplitable)
         }
     }
     
-    func testThatItsNotSplitableEnd() {
+    func testThatItsNotSplitableAtEnd() {
         let message = "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis disparturientmontes,nasceturridiculusmus.Sedposuereconsecteturestatlobortis.Nullamiddoloridnibhultriciesvehiculautidelit."
         
         XCTAssertThrowsError(try message.splitMessage(limit: 50), "Cannot split") { (error) in
-            XCTAssertEqual(error as! TweetSplitError, TweetSplitError.tweetNotSplitable)
+            XCTAssertEqual(error as! TSError, TSError.tweetNotSplitable)
         }
     }
 
