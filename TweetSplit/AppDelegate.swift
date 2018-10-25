@@ -12,10 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var sceneCoordinator:SceneCoordinator!
 
-
+    class var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupAppearacnes()
         return true
     }
 
@@ -44,3 +48,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate{
+    
+    func initializeAppEngine(){
+        self.sceneCoordinator = SceneCoordinator(window: self.window!)
+        let viewModel = TweetsHomeViewModel(coordinator: self.sceneCoordinator)
+        self.sceneCoordinator.transition(to: Scene.home(viewModel), type: .root)
+    }
+    
+    func setupAppearacnes(){
+        
+        self.window?.tintColor = UIColor.dusk;
+        
+        let screenWidth = UIScreen.main.bounds.size.width        
+        let separatorImage = getImageWithColor(color: UIColor.duckEggBlue2, size: CGSize(width: screenWidth, height: 1.0))
+        
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.tintColor = UIColor.dusk
+        navBarAppearance.barTintColor = UIColor.duckEggBlue
+        navBarAppearance.barStyle = .black
+        navBarAppearance.isTranslucent = false
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.dusk]
+        navBarAppearance.shadowImage = separatorImage
+        navBarAppearance.setBackgroundImage(separatorImage, for: .default)
+    }
+    
+    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
+}

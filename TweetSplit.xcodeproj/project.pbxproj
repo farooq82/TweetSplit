@@ -7,10 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81239DF4BBD4A8CC4C93D92C /* Pods_TweetSplitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EABD0875EE91668FF24211 /* Pods_TweetSplitUITests.framework */; };
+		8FB424BF3E37EE74C1A829C6 /* Pods_TweetSplitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705AB73438939F0A255FA187 /* Pods_TweetSplitTests.framework */; };
+		BD2248631C4450B5D6D7D469 /* Pods_TweetSplit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF45E762CFBF15D1DDDB06C /* Pods_TweetSplit.framework */; };
 		EB42AB192181CA8E0014CBD6 /* TSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5138F3217F883C00BE6CED /* TSError.swift */; };
+		EB4C22B5218230B400A70AED /* TweetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */; };
+		EB4C22B6218230B400A70AED /* TweetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */; };
+		EB4C22B82182312100A70AED /* TweetsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B72182312100A70AED /* TweetsHomeViewController.swift */; };
+		EB4C22C3218233CF00A70AED /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22BA218232F400A70AED /* Montserrat-Black.otf */; };
+		EB4C22C4218233CF00A70AED /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22C2218232F500A70AED /* Montserrat-Bold.otf */; };
+		EB4C22C5218233CF00A70AED /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22BD218232F500A70AED /* Montserrat-ExtraBold.otf */; };
+		EB4C22C6218233CF00A70AED /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22C1218232F500A70AED /* Montserrat-ExtraLight.otf */; };
+		EB4C22C7218233CF00A70AED /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22BE218232F500A70AED /* Montserrat-Light.otf */; };
+		EB4C22C8218233CF00A70AED /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22BF218232F500A70AED /* Montserrat-Medium.otf */; };
+		EB4C22C9218233CF00A70AED /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22BC218232F500A70AED /* Montserrat-Regular.otf */; };
+		EB4C22CA218233CF00A70AED /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22C0218232F500A70AED /* Montserrat-SemiBold.otf */; };
+		EB4C22CB218233CF00A70AED /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22BB218232F500A70AED /* Montserrat-Thin.otf */; };
+		EB4C22CD2182346100A70AED /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4C22CC2182346100A70AED /* Colors.xcassets */; };
+		EB4C22D521823A0700A70AED /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B02182305700A70AED /* SceneCoordinatorType.swift */; };
+		EB4C22D621823A0F00A70AED /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22AE2182305700A70AED /* Scene.swift */; };
+		EB4C22D721823A1200A70AED /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22AF2182305700A70AED /* Scene+ViewController.swift */; };
+		EB4C22D821823A1600A70AED /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B22182305700A70AED /* SceneCoordinator.swift */; };
+		EB4C22D921823A1B00A70AED /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B12182305700A70AED /* SceneTransitionType.swift */; };
+		EB4C22DA21823A1D00A70AED /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D12182382700A70AED /* BindableType.swift */; };
+		EB4C22DB21823A2700A70AED /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22CF218236B700A70AED /* UIColor+Additions.swift */; };
+		EB4C22DC21823A2A00A70AED /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D0218236B700A70AED /* UIFont+Additions.swift */; };
+		EB4C22DD21823A2D00A70AED /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D22182384700A70AED /* UINavigationController+Rx.swift */; };
+		EB4C22DE21823A3000A70AED /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D32182388500A70AED /* UIViewController+Additions.swift */; };
+		EB4C22E221823ACF00A70AED /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E021823ACF00A70AED /* AlertViewModel.swift */; };
+		EB4C22E321823ACF00A70AED /* C2HAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E121823ACF00A70AED /* C2HAlertViewController.swift */; };
+		EB4C22E521823B9E00A70AED /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E421823B9E00A70AED /* UIView+extension.swift */; };
 		EB5138F4217F883C00BE6CED /* TSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5138F3217F883C00BE6CED /* TSError.swift */; };
 		EBE19DD5217F599800DC0C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE19DD4217F599800DC0C16 /* AppDelegate.swift */; };
-		EBE19DD7217F599800DC0C16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE19DD6217F599800DC0C16 /* ViewController.swift */; };
 		EBE19DDA217F599800DC0C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE19DD8217F599800DC0C16 /* Main.storyboard */; };
 		EBE19DDC217F599900DC0C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE19DDB217F599900DC0C16 /* Assets.xcassets */; };
 		EBE19DDF217F599900DC0C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE19DDD217F599900DC0C16 /* LaunchScreen.storyboard */; };
@@ -38,10 +66,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0389934422095EB8FE870EC6 /* Pods-TweetSplit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSplit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSplit/Pods-TweetSplit.debug.xcconfig"; sourceTree = "<group>"; };
+		1853CCC50AC10BBD9030E4E9 /* Pods-TweetSplitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSplitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSplitTests/Pods-TweetSplitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BF45E762CFBF15D1DDDB06C /* Pods_TweetSplit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSplit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		705AB73438939F0A255FA187 /* Pods_TweetSplitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSplitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BFE178B77123C5BD27748D1 /* Pods-TweetSplitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSplitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSplitUITests/Pods-TweetSplitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8D5632EE3D5FB1C58DE0632 /* Pods-TweetSplit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSplit.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSplit/Pods-TweetSplit.release.xcconfig"; sourceTree = "<group>"; };
+		B12A652F19744495A37A293B /* Pods-TweetSplitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSplitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSplitTests/Pods-TweetSplitTests.release.xcconfig"; sourceTree = "<group>"; };
+		D4F1BD003187C58885C6CDB4 /* Pods-TweetSplitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSplitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSplitUITests/Pods-TweetSplitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E9EABD0875EE91668FF24211 /* Pods_TweetSplitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSplitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4C22AE2182305700A70AED /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		EB4C22AF2182305700A70AED /* Scene+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
+		EB4C22B02182305700A70AED /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
+		EB4C22B12182305700A70AED /* SceneTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransitionType.swift; sourceTree = "<group>"; };
+		EB4C22B22182305700A70AED /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsHomeViewModel.swift; sourceTree = "<group>"; };
+		EB4C22B72182312100A70AED /* TweetsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsHomeViewController.swift; sourceTree = "<group>"; };
+		EB4C22BA218232F400A70AED /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		EB4C22BB218232F500A70AED /* Montserrat-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.otf"; sourceTree = "<group>"; };
+		EB4C22BC218232F500A70AED /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		EB4C22BD218232F500A70AED /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		EB4C22BE218232F500A70AED /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		EB4C22BF218232F500A70AED /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		EB4C22C0218232F500A70AED /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		EB4C22C1218232F500A70AED /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
+		EB4C22C2218232F500A70AED /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		EB4C22CC2182346100A70AED /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EB4C22CF218236B700A70AED /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		EB4C22D0218236B700A70AED /* UIFont+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
+		EB4C22D12182382700A70AED /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		EB4C22D22182384700A70AED /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
+		EB4C22D32182388500A70AED /* UIViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
+		EB4C22E021823ACF00A70AED /* AlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		EB4C22E121823ACF00A70AED /* C2HAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2HAlertViewController.swift; sourceTree = "<group>"; };
+		EB4C22E421823B9E00A70AED /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		EB5138F3217F883C00BE6CED /* TSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSError.swift; sourceTree = "<group>"; };
 		EBE19DD1217F599800DC0C16 /* TweetSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE19DD4217F599800DC0C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBE19DD6217F599800DC0C16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EBE19DD9217F599800DC0C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBE19DDB217F599900DC0C16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBE19DDE217F599900DC0C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2248631C4450B5D6D7D469 /* Pods_TweetSplit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB424BF3E37EE74C1A829C6 /* Pods_TweetSplitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +137,103 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81239DF4BBD4A8CC4C93D92C /* Pods_TweetSplitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1362D1330E6781835E3F6C8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BF45E762CFBF15D1DDDB06C /* Pods_TweetSplit.framework */,
+				705AB73438939F0A255FA187 /* Pods_TweetSplitTests.framework */,
+				E9EABD0875EE91668FF24211 /* Pods_TweetSplitUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21A21C4354C58C7567D51700 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0389934422095EB8FE870EC6 /* Pods-TweetSplit.debug.xcconfig */,
+				A8D5632EE3D5FB1C58DE0632 /* Pods-TweetSplit.release.xcconfig */,
+				1853CCC50AC10BBD9030E4E9 /* Pods-TweetSplitTests.debug.xcconfig */,
+				B12A652F19744495A37A293B /* Pods-TweetSplitTests.release.xcconfig */,
+				7BFE178B77123C5BD27748D1 /* Pods-TweetSplitUITests.debug.xcconfig */,
+				D4F1BD003187C58885C6CDB4 /* Pods-TweetSplitUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EB4C22AD2182303D00A70AED /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C22AE2182305700A70AED /* Scene.swift */,
+				EB4C22AF2182305700A70AED /* Scene+ViewController.swift */,
+				EB4C22B22182305700A70AED /* SceneCoordinator.swift */,
+				EB4C22B02182305700A70AED /* SceneCoordinatorType.swift */,
+				EB4C22B12182305700A70AED /* SceneTransitionType.swift */,
+				EB4C22D12182382700A70AED /* BindableType.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
+		EB4C22B32182308100A70AED /* app */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C22DF21823ABC00A70AED /* Alerts */,
+				EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */,
+				EB4C22B72182312100A70AED /* TweetsHomeViewController.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		EB4C22B9218232E200A70AED /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C22BA218232F400A70AED /* Montserrat-Black.otf */,
+				EB4C22C2218232F500A70AED /* Montserrat-Bold.otf */,
+				EB4C22BD218232F500A70AED /* Montserrat-ExtraBold.otf */,
+				EB4C22C1218232F500A70AED /* Montserrat-ExtraLight.otf */,
+				EB4C22BE218232F500A70AED /* Montserrat-Light.otf */,
+				EB4C22BF218232F500A70AED /* Montserrat-Medium.otf */,
+				EB4C22BC218232F500A70AED /* Montserrat-Regular.otf */,
+				EB4C22C0218232F500A70AED /* Montserrat-SemiBold.otf */,
+				EB4C22BB218232F500A70AED /* Montserrat-Thin.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		EB4C22CE218236A200A70AED /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C22CF218236B700A70AED /* UIColor+Additions.swift */,
+				EB4C22D0218236B700A70AED /* UIFont+Additions.swift */,
+				EB4C22D22182384700A70AED /* UINavigationController+Rx.swift */,
+				EB4C22D32182388500A70AED /* UIViewController+Additions.swift */,
+				EB4C22E421823B9E00A70AED /* UIView+extension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		EB4C22D42182389400A70AED /* network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		EB4C22DF21823ABC00A70AED /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C22E021823ACF00A70AED /* AlertViewModel.swift */,
+				EB4C22E121823ACF00A70AED /* C2HAlertViewController.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		EBE19DC8217F599800DC0C16 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +241,8 @@
 				EBE19DE8217F599900DC0C16 /* TweetSplitTests */,
 				EBE19DF3217F599900DC0C16 /* TweetSplitUITests */,
 				EBE19DD2217F599800DC0C16 /* Products */,
+				21A21C4354C58C7567D51700 /* Pods */,
+				1362D1330E6781835E3F6C8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,10 +260,15 @@
 			isa = PBXGroup;
 			children = (
 				EBE19E02217F59FB00DC0C16 /* algorithm */,
+				EB4C22AD2182303D00A70AED /* coordinator */,
+				EB4C22D42182389400A70AED /* network */,
+				EB4C22B32182308100A70AED /* app */,
+				EB4C22CE218236A200A70AED /* extensions */,
+				EB4C22B9218232E200A70AED /* fonts */,
 				EBE19DD4217F599800DC0C16 /* AppDelegate.swift */,
-				EBE19DD6217F599800DC0C16 /* ViewController.swift */,
 				EBE19DD8217F599800DC0C16 /* Main.storyboard */,
 				EBE19DDB217F599900DC0C16 /* Assets.xcassets */,
+				EB4C22CC2182346100A70AED /* Colors.xcassets */,
 				EBE19DDD217F599900DC0C16 /* LaunchScreen.storyboard */,
 				EBE19DE0217F599900DC0C16 /* Info.plist */,
 			);
@@ -148,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBE19DF9217F599900DC0C16 /* Build configuration list for PBXNativeTarget "TweetSplit" */;
 			buildPhases = (
+				AC44465612390B618EBB2DA4 /* [CP] Check Pods Manifest.lock */,
 				EBE19DCD217F599800DC0C16 /* Sources */,
 				EBE19DCE217F599800DC0C16 /* Frameworks */,
 				EBE19DCF217F599800DC0C16 /* Resources */,
+				7C41541E5130387F45B170EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +328,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBE19DFC217F599900DC0C16 /* Build configuration list for PBXNativeTarget "TweetSplitTests" */;
 			buildPhases = (
+				209911B428034E3985825A7A /* [CP] Check Pods Manifest.lock */,
 				EBE19DE1217F599900DC0C16 /* Sources */,
 				EBE19DE2217F599900DC0C16 /* Frameworks */,
 				EBE19DE3217F599900DC0C16 /* Resources */,
@@ -183,6 +347,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBE19DFF217F599900DC0C16 /* Build configuration list for PBXNativeTarget "TweetSplitUITests" */;
 			buildPhases = (
+				B8C1B609BC746C4CA03E9178 /* [CP] Check Pods Manifest.lock */,
 				EBE19DEC217F599900DC0C16 /* Sources */,
 				EBE19DED217F599900DC0C16 /* Frameworks */,
 				EBE19DEE217F599900DC0C16 /* Resources */,
@@ -245,6 +410,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4C22C3218233CF00A70AED /* Montserrat-Black.otf in Resources */,
+				EB4C22C4218233CF00A70AED /* Montserrat-Bold.otf in Resources */,
+				EB4C22CD2182346100A70AED /* Colors.xcassets in Resources */,
+				EB4C22C5218233CF00A70AED /* Montserrat-ExtraBold.otf in Resources */,
+				EB4C22C6218233CF00A70AED /* Montserrat-ExtraLight.otf in Resources */,
+				EB4C22C7218233CF00A70AED /* Montserrat-Light.otf in Resources */,
+				EB4C22C8218233CF00A70AED /* Montserrat-Medium.otf in Resources */,
+				EB4C22C9218233CF00A70AED /* Montserrat-Regular.otf in Resources */,
+				EB4C22CA218233CF00A70AED /* Montserrat-SemiBold.otf in Resources */,
+				EB4C22CB218233CF00A70AED /* Montserrat-Thin.otf in Resources */,
 				EBE19DDF217F599900DC0C16 /* LaunchScreen.storyboard in Resources */,
 				EBE19DDC217F599900DC0C16 /* Assets.xcassets in Resources */,
 				EBE19DDA217F599800DC0C16 /* Main.storyboard in Resources */,
@@ -267,15 +442,136 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		209911B428034E3985825A7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TweetSplitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C41541E5130387F45B170EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TweetSplit/Pods-TweetSplit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
+				"${BUILT_PRODUCTS_DIR}/KVNProgress/KVNProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BonMot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVNProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TweetSplit/Pods-TweetSplit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC44465612390B618EBB2DA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TweetSplit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8C1B609BC746C4CA03E9178 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TweetSplitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EBE19DCD217F599800DC0C16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4C22D821823A1600A70AED /* SceneCoordinator.swift in Sources */,
 				EBE19E06217F5A3D00DC0C16 /* String+Tweetable.swift in Sources */,
-				EBE19DD7217F599800DC0C16 /* ViewController.swift in Sources */,
 				EBE19DD5217F599800DC0C16 /* AppDelegate.swift in Sources */,
+				EB4C22E221823ACF00A70AED /* AlertViewModel.swift in Sources */,
+				EB4C22E321823ACF00A70AED /* C2HAlertViewController.swift in Sources */,
+				EB4C22D921823A1B00A70AED /* SceneTransitionType.swift in Sources */,
 				EB5138F4217F883C00BE6CED /* TSError.swift in Sources */,
+				EB4C22DB21823A2700A70AED /* UIColor+Additions.swift in Sources */,
+				EB4C22B5218230B400A70AED /* TweetsHomeViewModel.swift in Sources */,
+				EB4C22D621823A0F00A70AED /* Scene.swift in Sources */,
+				EB4C22DE21823A3000A70AED /* UIViewController+Additions.swift in Sources */,
+				EB4C22D721823A1200A70AED /* Scene+ViewController.swift in Sources */,
+				EB4C22E521823B9E00A70AED /* UIView+extension.swift in Sources */,
+				EB4C22B82182312100A70AED /* TweetsHomeViewController.swift in Sources */,
+				EB4C22DC21823A2A00A70AED /* UIFont+Additions.swift in Sources */,
+				EB4C22DD21823A2D00A70AED /* UINavigationController+Rx.swift in Sources */,
+				EB4C22DA21823A1D00A70AED /* BindableType.swift in Sources */,
+				EB4C22D521823A0700A70AED /* SceneCoordinatorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE19E07217F5A3D00DC0C16 /* String+Tweetable.swift in Sources */,
+				EB4C22B6218230B400A70AED /* TweetsHomeViewModel.swift in Sources */,
 				EBE19DEA217F599900DC0C16 /* TweetSplitTests.swift in Sources */,
 				EB42AB192181CA8E0014CBD6 /* TSError.swift in Sources */,
 			);
@@ -450,6 +747,7 @@
 		};
 		EBE19DFA217F599900DC0C16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0389934422095EB8FE870EC6 /* Pods-TweetSplit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +766,7 @@
 		};
 		EBE19DFB217F599900DC0C16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8D5632EE3D5FB1C58DE0632 /* Pods-TweetSplit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +785,7 @@
 		};
 		EBE19DFD217F599900DC0C16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1853CCC50AC10BBD9030E4E9 /* Pods-TweetSplitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +807,7 @@
 		};
 		EBE19DFE217F599900DC0C16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12A652F19744495A37A293B /* Pods-TweetSplitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +829,7 @@
 		};
 		EBE19E00217F599900DC0C16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BFE178B77123C5BD27748D1 /* Pods-TweetSplitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +850,7 @@
 		};
 		EBE19E01217F599900DC0C16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4F1BD003187C58885C6CDB4 /* Pods-TweetSplitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
