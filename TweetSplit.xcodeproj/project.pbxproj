@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB42AB192181CA8E0014CBD6 /* TweetSplitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5138F3217F883C00BE6CED /* TweetSplitError.swift */; };
 		EB5138F4217F883C00BE6CED /* TweetSplitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5138F3217F883C00BE6CED /* TweetSplitError.swift */; };
 		EBE19DD5217F599800DC0C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE19DD4217F599800DC0C16 /* AppDelegate.swift */; };
 		EBE19DD7217F599800DC0C16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE19DD6217F599800DC0C16 /* ViewController.swift */; };
@@ -284,6 +285,7 @@
 			files = (
 				EBE19E07217F5A3D00DC0C16 /* TweetSplit.swift in Sources */,
 				EBE19DEA217F599900DC0C16 /* TweetSplitTests.swift in Sources */,
+				EB42AB192181CA8E0014CBD6 /* TweetSplitError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
