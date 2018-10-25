@@ -8,7 +8,6 @@
 
 import Foundation
 
-public let SPACE:Character = " "
 
 extension String{
     
@@ -33,16 +32,17 @@ extension String{
             return [tokens.joined(separator: " ")]
         }
 
-        //Initially estimate the number of parts possible from total string length
-        
+        //Initial estimates of parts message will be divided into
         let estimatedParts = totalLen/limit + (totalLen % limit > 0 ? 1 : 0);
         return try buildSubTweets(limit:limit, words: tokens, parts: estimatedParts)
     }
     
-    /// Tokenize message into words while eliminating the whatspace characters.
+    
+    
+    /// Tokenize message into words while eliminating whatspace characters.
     ///
     /// - Parameter limit: Tweet characters limit
-    /// - Returns: Array of words, total length of compacted message including spaces
+    /// - Returns: Array of words. Total length of compact message including spaces (helps in part estimatation)
     /// - Throws: TSError.tweetNotSplitable if a single words length is greater than limit
     
     private func tokenize(limit: Int) throws -> ([String], Int){
@@ -52,66 +52,69 @@ extension String{
         let input = self.unicodeScalars
         var wsIndex = input.startIndex  //Word start index
         let whiteSpaces = CharacterSet.whitespacesAndNewlines
-                
+        
         func distance(_ weIndex: String.UnicodeScalarView.Index) -> Int{
             return input.distance(from: wsIndex, to: weIndex)
+        }
+        
+        func extractWord(_ index: String.UnicodeScalarView.Index, wordLen:Int) throws {
+            
+            //Do not ignore first letter of first word
+            if wsIndex != input.startIndex{
+                wsIndex = input.index(wsIndex, offsetBy: 1)
+            }
+            
+            //Word is not splitable
+            if wordLen > limit || (wordsIndex.count > 0 && wordLen >= limit){
+                throw TSError.tweetNotSplitable
+            }
+
+            //Make word
+            let letters = input[ wsIndex ..< index]
+            
+            if letters.count > 0{
+                wordsIndex.append(String(letters))
+                totalLen += wordLen                 //word len + 1 (for space)
+            }
         }
         
         for index in input.indices{
             
             if whiteSpaces.contains(input[index]){
                 let wordLen = distance(index)
+                
                 if wordLen == 1 && !whiteSpaces.contains(input[wsIndex]){
+                    //Single letter word i.e "I"
                     let letters = input[ wsIndex ..< index]
                     wordsIndex.append(String(letters))
                     totalLen += wordLen + 1  //Extra 1 to accomodate for space
                     
                     wsIndex = index
                 }else if wordLen > 1{
-                    
-                    if wsIndex != input.startIndex{
-                        wsIndex = input.index(wsIndex, offsetBy: 1)
-                    }
-                    
-                    //Word is not splittable
-                    if wordLen > limit || (wordsIndex.count > 0 && wordLen >= limit){
-                        throw TSError.tweetNotSplitable
-                    }
-                    
-                    //Word found, store it
-                    let letters = input[ wsIndex ..< index]
-                    wordsIndex.append(String(letters))
-                    totalLen += wordLen  //Extra 1 to accomodate for space
-                    
+                    //Multi letters word
+                    try extractWord(index, wordLen: wordLen)
                     wsIndex = index
                 }else{
+                    //ignore white space
                     wsIndex = index
                 }
             }
         }
         
         //Last word
-        if wsIndex != input.endIndex{
-            let wordLen = distance(input.endIndex)
-            wsIndex = input.index(wsIndex, offsetBy: 1)
-            
-            if wordLen > limit || (wordsIndex.count > 0 && wordLen >= limit){
-                throw TSError.tweetNotSplitable
-            }
-            
-            let letters = input[ wsIndex ..< input.endIndex]
-            
-            if letters.count > 0{
-                wordsIndex.append(String(letters))
-                totalLen += wordLen
-            }
+        if wsIndex != input.endIndex {
+            try extractWord(input.endIndex, wordLen: distance(input.endIndex))
         }
         
         return (wordsIndex, totalLen)
     }
     
+    
+    
+    
     /// Recursive method to build subtweets from words array.
     /// Re-adjusts itself if number of built parts is greater that estimated parts
+    /// Maximum recusions - 1
     ///
     /// - Parameters:
     ///   - limit: Limit of a subtweet

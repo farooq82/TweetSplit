@@ -37,6 +37,7 @@ class TweetSplitTests: XCTestCase {
         XCTAssertEqual(try message.splitMessage(limit: limit), output)
     }
     
+    //Message is more that upper limit
     func testThatItsMoreThanUpperBound() {
         let message = "I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself."
         let expected = ["1/2 I can't believe Tweeter now supports chunking",
@@ -49,6 +50,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has double spaces between words. Algo should be able to eliminates extraapces
     func testThatItContainsDoubleSpaces() {
         let message = "I  can't  believe  Tweeter  now  supports  chunking  my  messages,  so  I  don't  have  to  do  it  myself."
         let expected = ["1/2 I can't believe Tweeter now supports chunking",
@@ -61,6 +63,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has triple spaces between words. Algo should be able to eliminates extraapces
     func testThatItContainsTripleSpaces() {
         let message = "I  can't   believe   Tweeter   now   supports   chunking   my   messages,   so   I   don't   have   to   do   it   myself."
         let expected = ["1/2 I can't believe Tweeter now supports chunking",
@@ -73,6 +76,20 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has large white space between subtweets. Algo should be able to eliminate extra space
+    func testThatItHasLargeSpaceBetweenSubtweets() {
+        let message = "I can't believe Tweeter now supports chunking                    my messages, so I don't have to do it myself."
+        let expected = ["1/2 I can't believe Tweeter now supports chunking",
+                        "2/2 my messages, so I don't have to do it myself."]
+        do{
+            let output  = try message.splitMessage(limit: limit)
+            XCTAssertEqual(output, expected)
+        }catch let error{
+            XCTAssertEqual(error as! TSError, TSError.tweetNotSplitable )
+        }
+    }
+    
+    //Message has large white space at the end. Algo should be able to eliminate extra space
     func testThatItHasMultipleSpacesAtEnd() {
         let message = "I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself.          "
         let expected = ["1/2 I can't believe Tweeter now supports chunking",
@@ -85,6 +102,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has large white space at the beginning. Algo should be able to eliminate extra space
     func testThatItHasMultipleSpacesAtStart() {
         let message = "             I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself."
         let expected = ["1/2 I can't believe Tweeter now supports chunking",
@@ -97,6 +115,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has large white space at the beginning and the end. Algo should be able to eliminate extra space
     func testThatItHasMultipleSpacesAtStartAndEnd() {
         let message = "             I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself.         "
         let expected = ["1/2 I can't believe Tweeter now supports chunking",
@@ -109,6 +128,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has enough words to split into 9 subtweets
     func testThatItsNineTweets() {
         let message = "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit."
         
@@ -130,6 +150,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has enough words to split into more than 10 subtweets
     func testThatItsMoreThanNineTweets() {
         let message = "Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
         
@@ -160,6 +181,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has nonsplitable word at the beginning. Algo should throw TSError.tweetNotSplitable error
     func testThatItssNotSpiltableAtStart() {
         let message = "Ican'tbelieveTweeternowsupportschunkingmymessages,soIdon'thavetodoitmyself."
         
@@ -168,6 +190,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has nonsplitable word in the middle. Algo should throw TSError.tweetNotSplitable error
     func testThatItsNotSplitableInMiddle() {
         let message = "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Donec ullamcorper nullanonmetusauctorfringilla.Cumsociisnatoquepenatibusetmagnisdisparturientmontes,nasceturridiculusmus. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit."
         
@@ -176,6 +199,7 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    //Message has nonsplitable word at the end. Algo should throw TSError.tweetNotSplitable error
     func testThatItsNotSplitableAtEnd() {
         let message = "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis disparturientmontes,nasceturridiculusmus.Sedposuereconsecteturestatlobortis.Nullamiddoloridnibhultriciesvehiculautidelit."
         
