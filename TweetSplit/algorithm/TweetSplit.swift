@@ -51,18 +51,27 @@ extension String{
         
         let input = self.unicodeScalars
         var wsIndex = input.startIndex  //Word start index
-        var weIndex = input.startIndex  //Word end index
         let whiteSpaces = CharacterSet.whitespacesAndNewlines
                 
-        func distance() -> Int{
+        func distance(_ weIndex: String.UnicodeScalarView.Index) -> Int{
             return input.distance(from: wsIndex, to: weIndex)
         }
         
         for index in input.indices{
             
             if whiteSpaces.contains(input[index]){
-                let wordLen = distance()
-                if wordLen >= 0{
+                let wordLen = distance(index)
+                if wordLen == 1 && !whiteSpaces.contains(input[wsIndex]){
+                    let letters = input[ wsIndex ..< index]
+                    wordsIndex.append(String(letters))
+                    totalLen += wordLen + 1  //Extra 1 to accomodate for space
+                    
+                    wsIndex = index
+                }else if wordLen > 1{
+                    
+                    if wsIndex != input.startIndex{
+                        wsIndex = input.index(wsIndex, offsetBy: 1)
+                    }
                     
                     //Word is not splittable
                     if wordLen > limit || (wordsIndex.count > 0 && wordLen >= limit){
@@ -70,34 +79,32 @@ extension String{
                     }
                     
                     //Word found, store it
-                    let letters = input[ wsIndex ... weIndex]
+                    let letters = input[ wsIndex ..< index]
                     wordsIndex.append(String(letters))
-                    totalLen += wordLen + 2  //Extra 1 to accomodate for space
+                    totalLen += wordLen  //Extra 1 to accomodate for space
                     
-                    wsIndex = input.index(after: index)
-                    weIndex = wsIndex
-                    
-                }else{
-                    //empty space, keep going
                     wsIndex = index
-                    weIndex = index
+                }else{
+                    wsIndex = index
                 }
-            }else{
-                //traversing on word
-                weIndex = index;
             }
         }
         
         //Last word
-        if wsIndex != weIndex{
-            let wordLen = distance()
+        if wsIndex != input.endIndex{
+            let wordLen = distance(input.endIndex)
+            wsIndex = input.index(wsIndex, offsetBy: 1)
+            
             if wordLen > limit || (wordsIndex.count > 0 && wordLen >= limit){
                 throw TSError.tweetNotSplitable
             }
             
-            let letters = input[ wsIndex ... weIndex]
-            wordsIndex.append(String(letters))
-            totalLen += wordLen + 2
+            let letters = input[ wsIndex ..< input.endIndex]
+            
+            if letters.count > 0{
+                wordsIndex.append(String(letters))
+                totalLen += wordLen
+            }
         }
         
         return (wordsIndex, totalLen)

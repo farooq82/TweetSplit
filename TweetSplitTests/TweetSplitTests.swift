@@ -61,6 +61,54 @@ class TweetSplitTests: XCTestCase {
         }
     }
     
+    func testThatItContainsTripleSpaces() {
+        let message = "I  can't   believe   Tweeter   now   supports   chunking   my   messages,   so   I   don't   have   to   do   it   myself."
+        let expected = ["1/2 I can't believe Tweeter now supports chunking",
+                        "2/2 my messages, so I don't have to do it myself."]
+        do{
+            let output  = try message.splitMessage(limit: limit)
+            XCTAssertEqual(output, expected)
+        }catch let error{
+            XCTAssertEqual(error as! TSError, TSError.tweetNotSplitable )
+        }
+    }
+    
+    func testThatItHasMultipleSpacesAtEnd() {
+        let message = "I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself.          "
+        let expected = ["1/2 I can't believe Tweeter now supports chunking",
+                        "2/2 my messages, so I don't have to do it myself."]
+        do{
+            let output  = try message.splitMessage(limit: limit)
+            XCTAssertEqual(output, expected)
+        }catch let error{
+            XCTAssertEqual(error as! TSError, TSError.tweetNotSplitable )
+        }
+    }
+    
+    func testThatItHasMultipleSpacesAtStart() {
+        let message = "             I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself."
+        let expected = ["1/2 I can't believe Tweeter now supports chunking",
+                        "2/2 my messages, so I don't have to do it myself."]
+        do{
+            let output  = try message.splitMessage(limit: limit)
+            XCTAssertEqual(output, expected)
+        }catch let error{
+            XCTAssertEqual(error as! TSError, TSError.tweetNotSplitable )
+        }
+    }
+    
+    func testThatItHasMultipleSpacesAtStartAndEnd() {
+        let message = "             I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself.         "
+        let expected = ["1/2 I can't believe Tweeter now supports chunking",
+                        "2/2 my messages, so I don't have to do it myself."]
+        do{
+            let output  = try message.splitMessage(limit: limit)
+            XCTAssertEqual(output, expected)
+        }catch let error{
+            XCTAssertEqual(error as! TSError, TSError.tweetNotSplitable )
+        }
+    }
+    
     func testThatItsNineTweets() {
         let message = "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit."
         
