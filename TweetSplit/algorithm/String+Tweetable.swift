@@ -7,7 +7,34 @@
 //
 
 import Foundation
+import RxSwift
 
+typealias TweetableMessage = (message:String, subTweets:[String]?, error:Error?)
+typealias TweetObservable = Observable<TweetableMessage>
+
+
+extension String{
+    
+    /// An Observer wrapper around split message
+    ///
+    /// - Parameter limit: Tweet characters limit (aka bounds)
+    /// - Returns: An observer with events of type (originalMessage, subtweets)
+    
+    func getTweetObservable(limit:Int) -> TweetObservable{
+        return Observable.create{ observer in
+            do{
+                let subTweets = try self.splitMessage(limit: limit)
+                observer.onNext((self, subTweets, nil))
+                observer.onCompleted()
+            }catch let error{
+                observer.onNext((self, nil, error))
+                observer.onCompleted()
+            }
+            
+            return Disposables.create()
+        }
+    }
+}
 
 extension String{
     

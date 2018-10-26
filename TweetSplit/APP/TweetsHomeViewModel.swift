@@ -12,10 +12,11 @@ import RxSwift
 import RxCocoa
 import Action
 
+
 struct TweetsHomeViewModel{
     let sceneCoordinator: SceneCoordinatorType
     
     init(coordinator: SceneCoordinatorType) {
         self.sceneCoordinator = coordinator
-    }
+    }        
 }

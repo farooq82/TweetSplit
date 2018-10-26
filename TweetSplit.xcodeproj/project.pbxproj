@@ -22,6 +22,9 @@
 		EB1D99A1218371BC006E67F2 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D22182384700A70AED /* UINavigationController+Rx.swift */; };
 		EB1D99A2218371BC006E67F2 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D32182388500A70AED /* UIViewController+Additions.swift */; };
 		EB1D99A3218371BC006E67F2 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E421823B9E00A70AED /* UIView+extension.swift */; };
+		EB1D99A521838F8E006E67F2 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D99A421838F8E006E67F2 /* TextStyles.swift */; };
+		EB1D99A621838F8E006E67F2 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D99A421838F8E006E67F2 /* TextStyles.swift */; };
+		EB1D99A921839DC5006E67F2 /* TweetTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D99A821839DC5006E67F2 /* TweetTextView.swift */; };
 		EB42AB192181CA8E0014CBD6 /* TSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5138F3217F883C00BE6CED /* TSError.swift */; };
 		EB4C22B5218230B400A70AED /* TweetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */; };
 		EB4C22B6218230B400A70AED /* TweetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */; };
@@ -85,6 +88,8 @@
 		B12A652F19744495A37A293B /* Pods-TweetSplitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSplitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSplitTests/Pods-TweetSplitTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4F1BD003187C58885C6CDB4 /* Pods-TweetSplitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetSplitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TweetSplitUITests/Pods-TweetSplitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E9EABD0875EE91668FF24211 /* Pods_TweetSplitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetSplitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB1D99A421838F8E006E67F2 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		EB1D99A821839DC5006E67F2 /* TweetTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTextView.swift; sourceTree = "<group>"; };
 		EB4C22AE2182305700A70AED /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		EB4C22AF2182305700A70AED /* Scene+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
 		EB4C22B02182305700A70AED /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
@@ -175,6 +180,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EB1D99A721839DB0006E67F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB1D99A821839DC5006E67F2 /* TweetTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EB4C22AD2182303D00A70AED /* coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +204,7 @@
 		EB4C22B32182308100A70AED /* APP */ = {
 			isa = PBXGroup;
 			children = (
+				EB1D99A721839DB0006E67F2 /* Views */,
 				EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */,
 				EB4C22B72182312100A70AED /* TweetsHomeViewController.swift */,
 			);
@@ -221,6 +235,7 @@
 				EB4C22D22182384700A70AED /* UINavigationController+Rx.swift */,
 				EB4C22D32182388500A70AED /* UIViewController+Additions.swift */,
 				EB4C22E421823B9E00A70AED /* UIView+extension.swift */,
+				EB1D99A421838F8E006E67F2 /* TextStyles.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -536,10 +551,12 @@
 			files = (
 				EB4C22D821823A1600A70AED /* SceneCoordinator.swift in Sources */,
 				EBE19E06217F5A3D00DC0C16 /* String+Tweetable.swift in Sources */,
+				EB1D99A521838F8E006E67F2 /* TextStyles.swift in Sources */,
 				EBE19DD5217F599800DC0C16 /* AppDelegate.swift in Sources */,
 				EB4C22D921823A1B00A70AED /* SceneTransitionType.swift in Sources */,
 				EB5138F4217F883C00BE6CED /* TSError.swift in Sources */,
 				EB4C22DB21823A2700A70AED /* UIColor+Additions.swift in Sources */,
+				EB1D99A921839DC5006E67F2 /* TweetTextView.swift in Sources */,
 				EB4C22B5218230B400A70AED /* TweetsHomeViewModel.swift in Sources */,
 				EB4C22D621823A0F00A70AED /* Scene.swift in Sources */,
 				EB4C22DE21823A3000A70AED /* UIViewController+Additions.swift in Sources */,
@@ -559,6 +576,7 @@
 			files = (
 				EBE19E07217F5A3D00DC0C16 /* String+Tweetable.swift in Sources */,
 				EB1D999E218371B7006E67F2 /* TweetsHomeViewController.swift in Sources */,
+				EB1D99A621838F8E006E67F2 /* TextStyles.swift in Sources */,
 				EB1D99A3218371BC006E67F2 /* UIView+extension.swift in Sources */,
 				EB1D999B218371AF006E67F2 /* SceneCoordinatorType.swift in Sources */,
 				EB4C22B6218230B400A70AED /* TweetsHomeViewModel.swift in Sources */,
