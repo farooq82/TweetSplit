@@ -10,6 +10,18 @@
 		81239DF4BBD4A8CC4C93D92C /* Pods_TweetSplitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EABD0875EE91668FF24211 /* Pods_TweetSplitUITests.framework */; };
 		8FB424BF3E37EE74C1A829C6 /* Pods_TweetSplitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705AB73438939F0A255FA187 /* Pods_TweetSplitTests.framework */; };
 		BD2248631C4450B5D6D7D469 /* Pods_TweetSplit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF45E762CFBF15D1DDDB06C /* Pods_TweetSplit.framework */; };
+		EB1D9998218371AF006E67F2 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22AE2182305700A70AED /* Scene.swift */; };
+		EB1D9999218371AF006E67F2 /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22AF2182305700A70AED /* Scene+ViewController.swift */; };
+		EB1D999A218371AF006E67F2 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B22182305700A70AED /* SceneCoordinator.swift */; };
+		EB1D999B218371AF006E67F2 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B02182305700A70AED /* SceneCoordinatorType.swift */; };
+		EB1D999C218371AF006E67F2 /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B12182305700A70AED /* SceneTransitionType.swift */; };
+		EB1D999D218371AF006E67F2 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D12182382700A70AED /* BindableType.swift */; };
+		EB1D999E218371B7006E67F2 /* TweetsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B72182312100A70AED /* TweetsHomeViewController.swift */; };
+		EB1D999F218371BC006E67F2 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22CF218236B700A70AED /* UIColor+Additions.swift */; };
+		EB1D99A0218371BC006E67F2 /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D0218236B700A70AED /* UIFont+Additions.swift */; };
+		EB1D99A1218371BC006E67F2 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D22182384700A70AED /* UINavigationController+Rx.swift */; };
+		EB1D99A2218371BC006E67F2 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D32182388500A70AED /* UIViewController+Additions.swift */; };
+		EB1D99A3218371BC006E67F2 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E421823B9E00A70AED /* UIView+extension.swift */; };
 		EB42AB192181CA8E0014CBD6 /* TSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5138F3217F883C00BE6CED /* TSError.swift */; };
 		EB4C22B5218230B400A70AED /* TweetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */; };
 		EB4C22B6218230B400A70AED /* TweetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */; };
@@ -34,8 +46,6 @@
 		EB4C22DC21823A2A00A70AED /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D0218236B700A70AED /* UIFont+Additions.swift */; };
 		EB4C22DD21823A2D00A70AED /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D22182384700A70AED /* UINavigationController+Rx.swift */; };
 		EB4C22DE21823A3000A70AED /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D32182388500A70AED /* UIViewController+Additions.swift */; };
-		EB4C22E221823ACF00A70AED /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E021823ACF00A70AED /* AlertViewModel.swift */; };
-		EB4C22E321823ACF00A70AED /* C2HAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E121823ACF00A70AED /* C2HAlertViewController.swift */; };
 		EB4C22E521823B9E00A70AED /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E421823B9E00A70AED /* UIView+extension.swift */; };
 		EB5138F4217F883C00BE6CED /* TSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5138F3217F883C00BE6CED /* TSError.swift */; };
 		EBE19DD5217F599800DC0C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE19DD4217F599800DC0C16 /* AppDelegate.swift */; };
@@ -97,8 +107,6 @@
 		EB4C22D12182382700A70AED /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		EB4C22D22182384700A70AED /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
 		EB4C22D32182388500A70AED /* UIViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
-		EB4C22E021823ACF00A70AED /* AlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
-		EB4C22E121823ACF00A70AED /* C2HAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2HAlertViewController.swift; sourceTree = "<group>"; };
 		EB4C22E421823B9E00A70AED /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		EB5138F3217F883C00BE6CED /* TSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSError.swift; sourceTree = "<group>"; };
 		EBE19DD1217F599800DC0C16 /* TweetSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,14 +188,13 @@
 			path = coordinator;
 			sourceTree = "<group>";
 		};
-		EB4C22B32182308100A70AED /* app */ = {
+		EB4C22B32182308100A70AED /* APP */ = {
 			isa = PBXGroup;
 			children = (
-				EB4C22DF21823ABC00A70AED /* Alerts */,
 				EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */,
 				EB4C22B72182312100A70AED /* TweetsHomeViewController.swift */,
 			);
-			path = app;
+			path = APP;
 			sourceTree = "<group>";
 		};
 		EB4C22B9218232E200A70AED /* fonts */ = {
@@ -218,22 +225,6 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
-		EB4C22D42182389400A70AED /* network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = network;
-			sourceTree = "<group>";
-		};
-		EB4C22DF21823ABC00A70AED /* Alerts */ = {
-			isa = PBXGroup;
-			children = (
-				EB4C22E021823ACF00A70AED /* AlertViewModel.swift */,
-				EB4C22E121823ACF00A70AED /* C2HAlertViewController.swift */,
-			);
-			path = Alerts;
-			sourceTree = "<group>";
-		};
 		EBE19DC8217F599800DC0C16 = {
 			isa = PBXGroup;
 			children = (
@@ -261,8 +252,7 @@
 			children = (
 				EBE19E02217F59FB00DC0C16 /* algorithm */,
 				EB4C22AD2182303D00A70AED /* coordinator */,
-				EB4C22D42182389400A70AED /* network */,
-				EB4C22B32182308100A70AED /* app */,
+				EB4C22B32182308100A70AED /* APP */,
 				EB4C22CE218236A200A70AED /* extensions */,
 				EB4C22B9218232E200A70AED /* fonts */,
 				EBE19DD4217F599800DC0C16 /* AppDelegate.swift */,
@@ -469,42 +459,32 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TweetSplit/Pods-TweetSplit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
 				"${BUILT_PRODUCTS_DIR}/KVNProgress/KVNProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BonMot.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVNProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -557,8 +537,6 @@
 				EB4C22D821823A1600A70AED /* SceneCoordinator.swift in Sources */,
 				EBE19E06217F5A3D00DC0C16 /* String+Tweetable.swift in Sources */,
 				EBE19DD5217F599800DC0C16 /* AppDelegate.swift in Sources */,
-				EB4C22E221823ACF00A70AED /* AlertViewModel.swift in Sources */,
-				EB4C22E321823ACF00A70AED /* C2HAlertViewController.swift in Sources */,
 				EB4C22D921823A1B00A70AED /* SceneTransitionType.swift in Sources */,
 				EB5138F4217F883C00BE6CED /* TSError.swift in Sources */,
 				EB4C22DB21823A2700A70AED /* UIColor+Additions.swift in Sources */,
@@ -580,9 +558,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE19E07217F5A3D00DC0C16 /* String+Tweetable.swift in Sources */,
+				EB1D999E218371B7006E67F2 /* TweetsHomeViewController.swift in Sources */,
+				EB1D99A3218371BC006E67F2 /* UIView+extension.swift in Sources */,
+				EB1D999B218371AF006E67F2 /* SceneCoordinatorType.swift in Sources */,
 				EB4C22B6218230B400A70AED /* TweetsHomeViewModel.swift in Sources */,
+				EB1D9998218371AF006E67F2 /* Scene.swift in Sources */,
+				EB1D999F218371BC006E67F2 /* UIColor+Additions.swift in Sources */,
+				EB1D999D218371AF006E67F2 /* BindableType.swift in Sources */,
+				EB1D9999218371AF006E67F2 /* Scene+ViewController.swift in Sources */,
+				EB1D99A2218371BC006E67F2 /* UIViewController+Additions.swift in Sources */,
 				EBE19DEA217F599900DC0C16 /* TweetSplitTests.swift in Sources */,
+				EB1D999A218371AF006E67F2 /* SceneCoordinator.swift in Sources */,
+				EB1D99A0218371BC006E67F2 /* UIFont+Additions.swift in Sources */,
+				EB1D99A1218371BC006E67F2 /* UINavigationController+Rx.swift in Sources */,
 				EB42AB192181CA8E0014CBD6 /* TSError.swift in Sources */,
+				EB1D999C218371AF006E67F2 /* SceneTransitionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

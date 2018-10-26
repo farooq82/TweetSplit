@@ -2,25 +2,15 @@ PODS:
   - Action (3.8.0):
     - RxCocoa (~> 4.3.0)
     - RxSwift (~> 4.3.0)
-  - Alamofire (4.7.3)
-  - AlamofireObjectMapper (5.0.0):
-    - Alamofire (~> 4.1)
-    - ObjectMapper (~> 3.0)
   - BonMot (5.3)
   - KVNProgress (2.3.1)
   - "NSObject+Rx (4.4.1)":
     - RxSwift (~> 4.3)
-  - ObjectMapper (3.3.0)
   - Realm (3.7.6):
     - Realm/Headers (= 3.7.6)
   - Realm/Headers (3.7.6)
   - RealmSwift (3.7.6):
     - Realm (= 3.7.6)
-  - RxAlamofire (4.3.0):
-    - RxAlamofire/Core (= 4.3.0)
-  - RxAlamofire/Core (4.3.0):
-    - Alamofire (~> 4.5)
-    - RxSwift (~> 4)
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxGesture (2.0.1):
@@ -38,63 +28,49 @@ PODS:
     - RxRealm (~> 0.7.3)
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
-  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Action (~> 3.8.0)
-  - AlamofireObjectMapper (~> 5.0.0)
   - BonMot (~> 5.2)
   - KVNProgress
   - "NSObject+Rx (~> 4.4.1)"
   - RealmSwift (~> 3.7.4)
-  - RxAlamofire (~> 4.3.0)
   - RxCocoa (~> 4.3.1)
   - RxGesture (~> 2.0.1)
   - RxOptional (~> 3.5.0)
   - RxRealm
   - RxRealmDataSources (~> 0.2.9)
   - RxSwift (~> 4.3.1)
-  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Action
-    - Alamofire
-    - AlamofireObjectMapper
     - BonMot
     - KVNProgress
     - "NSObject+Rx"
-    - ObjectMapper
     - Realm
     - RealmSwift
-    - RxAlamofire
     - RxCocoa
     - RxGesture
     - RxOptional
     - RxRealm
     - RxRealmDataSources
     - RxSwift
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Action: 2275d04a407ecaf46a58d58a304388a28155a0a1
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   BonMot: 0104d1b4eda54f4a4b7393d6559539ef25498fbd
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   "NSObject+Rx": 9884a92f19b610795c431e10b4e601913b59c9e9
-  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
-  RxAlamofire: 09624d0f2d48ed8b686e4eb4cf68e28cbd2df556
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxGesture: 26ede4ed13ffc6336d29dbd9a8dff229bdb72de7
   RxOptional: bd32ff8ca9df4177683d56ffeb618a9d4d5d5cad
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxRealmDataSources: 798303f1d7db18d80da9e95bab9605010378040e
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: d4124b99736d78a21a3ddc0b6b8b63241b79b36a
+PODFILE CHECKSUM: aacbbf5f557b7fbb9814299f9610d010c80ccbbd
 
 COCOAPODS: 1.5.3

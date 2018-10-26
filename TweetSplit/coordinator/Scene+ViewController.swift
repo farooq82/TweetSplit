@@ -10,12 +10,6 @@ extension Scene {
             var svc = nc.viewControllers.first as! TweetsHomeViewController
             svc.bindViewModel(to: homeViewModel)
             return nc
-            
-        
-        case .alert(let alertViewModel):
-            var avc = storyboard.instantiateViewController(withIdentifier: "Alert") as! C2HAlertViewController
-            avc.bindViewModel(to: alertViewModel)
-            return avc
         }
     }
 }

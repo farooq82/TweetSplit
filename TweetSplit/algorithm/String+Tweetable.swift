@@ -27,7 +27,10 @@ extension String{
         }
         
         let (tokens, totalLen) = try tokenize(limit: limit)
-        if(totalLen <= limit){
+        if totalLen == 0{
+            //message is all spaces
+            return []
+        }else if(totalLen <= limit){
             //Compact message length is within limit
             return [tokens.joined(separator: " ")]
         }
@@ -102,8 +105,9 @@ extension String{
         }
         
         //Last word
-        if wsIndex != input.endIndex {
-            try extractWord(input.endIndex, wordLen: distance(input.endIndex))
+        let wordLen = distance(input.endIndex);
+        if wordLen > 1 || !whiteSpaces.contains(input[wsIndex]) {
+            try extractWord(input.endIndex, wordLen: wordLen)
         }
         
         return (wordsIndex, totalLen)

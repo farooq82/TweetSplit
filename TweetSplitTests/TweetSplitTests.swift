@@ -29,6 +29,30 @@ class TweetSplitTests: XCTestCase {
         XCTAssertEqual(try message.splitMessage(limit: limit).count, 0)
     }
     
+    //Single letter 1 word
+    func testThatItsMultipleSpaces() {
+        let message = "         "
+        let output:[String] = []
+        
+        XCTAssertEqual(try message.splitMessage(limit: limit), output)
+    }
+    
+    //Single letter 1 word
+    func testThatItsSingleLetterWord() {
+        let message = "I"
+        let output = ["I"]
+        
+        XCTAssertEqual(try message.splitMessage(limit: limit), output)
+    }
+    
+    //Single letter 1 word and lots of spaces
+    func testThatItsSingleLetterWordWithSpacesAtEnd() {
+        let message = "I                "
+        let output = ["I"]
+        
+        XCTAssertEqual(try message.splitMessage(limit: limit), output)
+    }
+    
     //1 subtweets when string length is less than upper bound
     func testThatItsLessThanUpperBound() {
         let message = "Mattis Parturient Risus Sollicitudin"

@@ -9,8 +9,6 @@
 import Foundation
 
 enum Scene{
-    //Alerts
-    case alert(AlertViewModel)
     
     //Registration
     case home(TweetsHomeViewModel)
