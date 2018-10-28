@@ -162,9 +162,10 @@ class TweetsHomeViewController: UIViewController, BindableType {
         tvMessage.layer.borderColor = UIColor(white: 0.75, alpha: 1.0).cgColor
         tvMessage.textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
         
-        //        let nc = NotificationCenter.default
-        //        nc.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        //        nc.addObserver(self, selector:#selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        //Keyboard notifications
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        nc.addObserver(self, selector:#selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func showEmptyTweetsMessage(){
