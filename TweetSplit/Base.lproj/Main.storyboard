@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eSi-QG-hcR">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,7 +21,7 @@
                 <navigationController storyboardIdentifier="Start-Scene" automaticallyAdjustsScrollViewInsets="NO" id="eSi-QG-hcR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bmh-a9-05u">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="lightBlueGrey"/>
                         <textAttributes key="titleTextAttributes">
@@ -47,25 +47,29 @@
             <objects>
                 <viewController storyboardIdentifier="Tweets-Home" id="D6T-mL-mEA" customClass="TweetsHomeViewController" customModule="TweetSplit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z4I-eg-W3z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lHF-hO-7Yj">
-                                <rect key="frame" x="0.0" y="64" width="375" height="519.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lHF-hO-7Yj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="689.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="delegate" destination="D6T-mL-mEA" id="WVy-iO-86g"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-gH-9aM">
+                                <rect key="frame" x="0.0" y="777.33333333333337" width="414" height="118.66666666666663"/>
+                                <color key="backgroundColor" name="lightBlueGrey"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-uU-Zlc">
-                                <rect key="frame" x="0.0" y="583.5" width="375" height="83.5"/>
+                                <rect key="frame" x="0.0" y="777.33333333333337" width="414" height="84.666666666666629"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rDg-pP-S2o">
-                                        <rect key="frame" x="12" y="8" width="351" height="50"/>
+                                        <rect key="frame" x="12" y="8" width="390" height="50"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qo7-3q-1e1" customClass="TweetTextView" customModule="TweetSplit" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="307" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="346" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" name="dusk"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
@@ -80,7 +84,7 @@
                                                 </connections>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mti-M1-XZV">
-                                                <rect key="frame" x="315" y="7" width="36" height="36"/>
+                                                <rect key="frame" x="354" y="7" width="36" height="36"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="dodgerBlue"/>
                                                 <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
@@ -96,8 +100,8 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let say &lt;r&gt;Happy tweeting&lt;/r&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kth-h9-hRb">
-                                        <rect key="frame" x="12" y="62" width="307" height="13.5"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
+                                        <rect key="frame" x="12" y="61.999999999999993" width="346" height="14.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                         <color key="textColor" name="battleshipGrey"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -119,12 +123,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ESa-uU-Zlc" secondAttribute="trailing" id="6Hn-R1-G7l"/>
+                            <constraint firstItem="wfh-gH-9aM" firstAttribute="top" secondItem="ESa-uU-Zlc" secondAttribute="top" id="0Oo-7t-Rh2"/>
+                            <constraint firstItem="wfh-gH-9aM" firstAttribute="leading" secondItem="Z4I-eg-W3z" secondAttribute="leading" id="0dq-xw-Yel"/>
+                            <constraint firstItem="x4l-1h-ZyY" firstAttribute="trailing" secondItem="ESa-uU-Zlc" secondAttribute="trailing" id="6Hn-R1-G7l"/>
+                            <constraint firstAttribute="bottom" secondItem="wfh-gH-9aM" secondAttribute="bottom" id="Fhi-bG-ArP"/>
+                            <constraint firstAttribute="trailing" secondItem="wfh-gH-9aM" secondAttribute="trailing" id="Hn8-11-5xF"/>
                             <constraint firstItem="lHF-hO-7Yj" firstAttribute="top" secondItem="x4l-1h-ZyY" secondAttribute="top" id="IUq-TN-cUm"/>
                             <constraint firstItem="ESa-uU-Zlc" firstAttribute="bottom" secondItem="x4l-1h-ZyY" secondAttribute="bottom" id="oIe-DU-nBq"/>
                             <constraint firstItem="lHF-hO-7Yj" firstAttribute="leading" secondItem="x4l-1h-ZyY" secondAttribute="leading" id="oSq-j8-sgt"/>
                             <constraint firstItem="x4l-1h-ZyY" firstAttribute="trailing" secondItem="lHF-hO-7Yj" secondAttribute="trailing" id="pd4-bi-N47"/>
-                            <constraint firstItem="ESa-uU-Zlc" firstAttribute="leading" secondItem="Z4I-eg-W3z" secondAttribute="leading" id="vsl-m1-9dn"/>
+                            <constraint firstItem="ESa-uU-Zlc" firstAttribute="leading" secondItem="x4l-1h-ZyY" secondAttribute="leading" id="vsl-m1-9dn"/>
                             <constraint firstItem="ESa-uU-Zlc" firstAttribute="top" secondItem="lHF-hO-7Yj" secondAttribute="bottom" id="zbj-QS-rDV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x4l-1h-ZyY"/>
@@ -132,6 +140,7 @@
                     <navigationItem key="navigationItem" title="TweetSplit" id="QMJ-i0-eZg"/>
                     <connections>
                         <outlet property="btnSend" destination="mti-M1-XZV" id="NSW-vx-S8V"/>
+                        <outlet property="emptyTableView" destination="lL3-wO-Rpd" id="RfQ-DG-1nc"/>
                         <outlet property="lacMessageBottom" destination="oIe-DU-nBq" id="d7d-fB-N7h"/>
                         <outlet property="lblStatus" destination="Kth-h9-hRb" id="MPS-1G-sXK"/>
                         <outlet property="tableView" destination="lHF-hO-7Yj" id="ZaR-qO-hFi"/>
@@ -140,11 +149,50 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcn-lV-i9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="lL3-wO-Rpd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gme-zt-dqf">
+                            <rect key="frame" x="106.33333333333333" y="55.666666666666671" width="162.33333333333337" height="138.66666666666663"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-A9-zxW">
+                                    <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="100"/>
+                                    <color key="tintColor" name="tealish"/>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="2WE-Rg-GfY">
+                                    <rect key="frame" x="0.0" y="100" width="162.33333333333334" height="38.666666666666657"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's so quite here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRr-3s-3nG">
+                                            <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="17.333333333333332"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                            <color key="textColor" name="dusk"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's do some tweeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Aw-l2-K66">
+                                            <rect key="frame" x="0.0" y="21.333333333333343" width="162.33333333333334" height="17.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                            <color key="textColor" name="lavenderBlue"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Gme-zt-dqf" firstAttribute="centerY" secondItem="6de-wg-ldF" secondAttribute="centerY" id="K6s-Sl-TTQ"/>
+                        <constraint firstItem="Gme-zt-dqf" firstAttribute="centerX" secondItem="6de-wg-ldF" secondAttribute="centerX" id="jh9-Ai-Fjx"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="6de-wg-ldF"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="958" y="707"/>
         </scene>
     </scenes>
     <resources>
+        <image name="placeholder" width="100" height="100"/>
         <image name="twitter" width="32" height="32"/>
         <image name="twitter_disabled" width="32" height="32"/>
         <namedColor name="battleshipGrey">
@@ -156,8 +204,14 @@
         <namedColor name="dusk">
             <color red="0.33333333333333331" green="0.34509803921568627" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="lavenderBlue">
+            <color red="0.5725490196078431" green="0.49019607843137253" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="lightBlueGrey">
             <color red="0.83529411764705885" green="0.85490196078431369" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tealish">
+            <color red="0.25098039215686274" green="0.81568627450980391" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

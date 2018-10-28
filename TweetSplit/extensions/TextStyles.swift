@@ -23,6 +23,14 @@ class TextUtils{
         )
     }
     
+    var tweetMessageStyle: StringStyle{
+        return StringStyle(
+            .font(UIFont.pt14BodyDark),
+            .color(.dusk),
+            .lineSpacing(3)
+        )
+    }
+    
     func registerTextStyles(){
         let required = StringStyle(.color(.red))
         let style = StringStyle(

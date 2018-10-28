@@ -21,7 +21,6 @@ class Avatar:UIImageView{
 class TweetCell: UITableViewCell {
     @IBOutlet weak var svContainer: UIStackView!
     @IBOutlet weak var vContainer: UIView!
-    @IBOutlet weak var ivLogoLeft: UIImageView!
     @IBOutlet weak var ivLogoRight: UIImageView!
     @IBOutlet weak var lblMessage: UITextView!
     @IBOutlet weak var lblTimeStamp: UILabel!
@@ -30,12 +29,16 @@ class TweetCell: UITableViewCell {
     var disposeBag = DisposeBag()
     
     func configure(with tweet: Tweet, at indexPath:IndexPath){
-        print("Message: \(String(describing: tweet.message))")
-        lblMessage.text = tweet.message
+        
+        tweet.rx.observe(String.self, "message")
+            .subscribe(onNext:{[weak self] message in
+                self?.lblMessage.attributedText = tweet.message?.styled(with: TextUtils.shared.tweetMessageStyle)
+            })
+            .disposed(by: disposeBag)
+        
         lblTimeStamp.text = tweet.time?.lowercased()
         
         ivLogoRight.isHidden = false
-        ivLogoLeft.isHidden = true
         svContainer.alignment = .trailing
         
         self.contentView.setNeedsLayout()
@@ -44,8 +47,6 @@ class TweetCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        ivLogoLeft.layer.borderWidth = 0.5
-        ivLogoLeft.layer.borderColor = UIColor.dusk.cgColor
 
         ivLogoRight.layer.borderWidth = 0.5
         ivLogoRight.layer.borderColor = UIColor.dusk.cgColor
@@ -57,7 +58,6 @@ class TweetCell: UITableViewCell {
 
     override func prepareForReuse() {
         ivLogoRight.isHidden = true
-        ivLogoLeft.isHidden = true
         ivImage.isHidden = true
         disposeBag = DisposeBag()
         super.prepareForReuse()

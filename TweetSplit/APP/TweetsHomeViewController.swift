@@ -16,6 +16,7 @@ import RxBiBinding
 
 class TweetsHomeViewController: UIViewController, BindableType {
     @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var emptyTableView:UIView!
     @IBOutlet weak var tvMessage:UITextView!
     @IBOutlet weak var btnSend: UIButton!
     @IBOutlet weak var lacMessageBottom: NSLayoutConstraint!
@@ -36,9 +37,18 @@ class TweetsHomeViewController: UIViewController, BindableType {
         configureDataSource()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.adjustFooterViewHeightToFillTableView()
+    }
+    
     func bindViewModel() {
+        
+        //Two way binding between TextView and message subject
+        //message subject helps to reset composer when tweet is successfully posted
         (tvMessage.rx.text <-> viewModel.tweetMessage).disposed(by: rx.disposeBag)
         
+        //Transform TextView input to tweets
         let messageObserver = viewModel.tweetMessage.asObservable()
             .filterNil()
             .distinctUntilChanged()
@@ -48,8 +58,10 @@ class TweetsHomeViewController: UIViewController, BindableType {
             .flatMap{message -> TweetObservable in
                 message.getTweetObservable(limit: 50)
             }
-            .share()   //Send will have last event when clicked
+            .share()
         
+        
+        //Update status label when valid tweets
         messageObserver
             .map{$0.subTweets}
             .filterNil()
@@ -57,6 +69,8 @@ class TweetsHomeViewController: UIViewController, BindableType {
             .bind(to: lblStatus.rx.attributedText)
             .disposed(by: rx.disposeBag)
         
+        
+        //Update status label when error
         messageObserver
             .map{$0.error as? TSError}
             .filterNil()
@@ -64,6 +78,8 @@ class TweetsHomeViewController: UIViewController, BindableType {
             .bind(to: lblStatus.rx.attributedText)
             .disposed(by: rx.disposeBag)
         
+        
+        //Disables send button if tweets are invalid
         messageObserver
             .map{message in
                 return (( message.subTweets?.count ?? 0) == 0 || message.error != nil ) ? false : true
@@ -72,6 +88,8 @@ class TweetsHomeViewController: UIViewController, BindableType {
             .bind(to: btnSend.rx.isEnabled)
             .disposed(by: rx.disposeBag)
         
+        
+        //Hide to display placeholder message
         messageObserver
             .map{$0.message.isEmpty ? false : true}
             .bind(to: messagePlaceholder.rx.isHidden)
@@ -94,7 +112,8 @@ class TweetsHomeViewController: UIViewController, BindableType {
             })
             .disposed(by: rx.disposeBag)
         
-        //Reset when tweet is posted
+        
+        //Reset when tweet(s) are posted
         viewModel.actionPostTweets.executing
             .skip(1)
             .filter{$0 == false}
@@ -107,8 +126,23 @@ class TweetsHomeViewController: UIViewController, BindableType {
         viewModel.tweetsChangeSet
             .bind(to: tableView.rx.realmChanges(tweetsDataSource))
             .disposed(by: rx.disposeBag)
+        
+        
+        //Show message when there are no tweets
+        viewModel.tweetsChangeSet
+            .map{$0.0.count}
+            .subscribe(onNext:{[weak self] count in
+                if count == 0{
+                    self?.showEmptyTweetsMessage()
+                }else{
+                    self?.hideEmptyTweetMessage()
+                }
+            })
+            .disposed(by: rx.disposeBag)
     }
     
+    
+    /// Setup tableview data source
     fileprivate func configureDataSource() {
         tweetsDataSource = RxTableViewRealmDataSource<Tweet>(cellIdentifier: "TweetCell", cellType: TweetCell.self) { cell, ip, tweet in
             cell.configure(with: tweet, at:ip)
@@ -131,6 +165,18 @@ class TweetsHomeViewController: UIViewController, BindableType {
         //        let nc = NotificationCenter.default
         //        nc.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         //        nc.addObserver(self, selector:#selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func showEmptyTweetsMessage(){
+        emptyTableView.frame = self.view.bounds
+        emptyTableView.transform = CGAffineTransform(scaleX: 1, y: -1)
+        self.tableView.tableFooterView = emptyTableView
+        self.tableView.layoutIfNeeded()
+    }
+    
+    
+    func hideEmptyTweetMessage(){
+        self.tableView.tableFooterView = nil
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
