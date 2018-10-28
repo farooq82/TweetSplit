@@ -26,10 +26,12 @@ struct TweetsHomeViewModel{
         tweetMessage = BehaviorRelay(value: "")
     }
     
+    /// tweets changeset observer
     lazy var tweetsChangeSet: Observable<(AnyRealmCollection<Tweet>, RealmChangeset?)> = {this in
         return this.tweetService.tweetsChangeSet
     }(self)
     
+    ///Post tweets
     lazy var actionPostTweets:Action<[String], Void> = {this in
         return Action{tweets in
             this.tweetService.postTweets(tweets)

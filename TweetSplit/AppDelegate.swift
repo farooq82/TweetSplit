@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate{
     
+    // Initialize coordinator and kickstart application
     func initializeAppEngine(){
         self.sceneCoordinator = SceneCoordinator(window: self.window!)
         let viewModel = TweetsHomeViewModel(coordinator: self.sceneCoordinator, tweetService: TweetService())

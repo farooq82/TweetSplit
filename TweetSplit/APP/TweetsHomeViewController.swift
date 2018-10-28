@@ -14,6 +14,8 @@ import RxOptional
 import RxRealmDataSources
 import RxBiBinding
 
+fileprivate let TWEET_LIMIT = 50
+
 class TweetsHomeViewController: UIViewController, BindableType {
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var emptyTableView:UIView!
@@ -26,6 +28,7 @@ class TweetsHomeViewController: UIViewController, BindableType {
     var messagePlaceholder : UILabel!
     var viewModel: TweetsHomeViewModel!
     var tweetsDataSource: RxTableViewRealmDataSource<Tweet>!
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -56,7 +59,7 @@ class TweetsHomeViewController: UIViewController, BindableType {
                 self?.tvMessage.invalidateIntrinsicContentSize()
             })
             .flatMap{message -> TweetObservable in
-                message.getTweetObservable(limit: 50)
+                message.getTweetObservable(limit: TWEET_LIMIT)
             }
             .share()
         
@@ -89,7 +92,7 @@ class TweetsHomeViewController: UIViewController, BindableType {
             .disposed(by: rx.disposeBag)
         
         
-        //Hide to display placeholder message
+        //Hide or display placeholder message
         messageObserver
             .map{$0.message.isEmpty ? false : true}
             .bind(to: messagePlaceholder.rx.isHidden)
@@ -100,7 +103,7 @@ class TweetsHomeViewController: UIViewController, BindableType {
         btnSend.rx.tap
             .flatMap{[weak self] _ -> Observable<[String]> in
                 do {
-                    let subTweets = try self?.tvMessage.text.splitMessage(limit: 50) ?? []
+                    let subTweets = try self?.tvMessage.text.splitMessage(limit: TWEET_LIMIT) ?? []
                     return Observable.of(subTweets)
                 }catch let error{
                     return .error(error)
@@ -128,7 +131,7 @@ class TweetsHomeViewController: UIViewController, BindableType {
             .disposed(by: rx.disposeBag)
         
         
-        //Show message when there are no tweets
+        //Show empty message when there are no tweets
         viewModel.tweetsChangeSet
             .map{$0.0.count}
             .subscribe(onNext:{[weak self] count in
@@ -168,6 +171,7 @@ class TweetsHomeViewController: UIViewController, BindableType {
         nc.addObserver(self, selector:#selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    /// Show empty message when there are no tweets
     func showEmptyTweetsMessage(){
         emptyTableView.frame = self.view.bounds
         emptyTableView.transform = CGAffineTransform(scaleX: 1, y: -1)
@@ -176,6 +180,7 @@ class TweetsHomeViewController: UIViewController, BindableType {
     }
     
     
+    /// Show empty message when there are 1 or more tweets
     func hideEmptyTweetMessage(){
         self.tableView.tableFooterView = nil
     }
