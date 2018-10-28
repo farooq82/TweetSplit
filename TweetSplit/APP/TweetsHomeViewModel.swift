@@ -11,12 +11,29 @@ import Foundation
 import RxSwift
 import RxCocoa
 import Action
+import RealmSwift
+import RxRealm
 
 
 struct TweetsHomeViewModel{
     let sceneCoordinator: SceneCoordinatorType
+    let tweetService: TweetServiceType
+    let tweetMessage: BehaviorRelay<String?>
     
-    init(coordinator: SceneCoordinatorType) {
+    init(coordinator: SceneCoordinatorType, tweetService:TweetServiceType) {
         self.sceneCoordinator = coordinator
-    }        
+        self.tweetService = tweetService
+        tweetMessage = BehaviorRelay(value: "")
+    }
+    
+    lazy var tweetsChangeSet: Observable<(AnyRealmCollection<Tweet>, RealmChangeset?)> = {this in
+        return this.tweetService.tweetsChangeSet
+    }(self)
+    
+    lazy var actionPostTweets:Action<[String], Void> = {this in
+        return Action{tweets in
+            this.tweetService.postTweets(tweets)
+            return .just(())
+        }
+    }(self)
 }

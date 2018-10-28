@@ -51,6 +51,20 @@
 		EB4C22DE21823A3000A70AED /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22D32182388500A70AED /* UIViewController+Additions.swift */; };
 		EB4C22E521823B9E00A70AED /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C22E421823B9E00A70AED /* UIView+extension.swift */; };
 		EB5138F4217F883C00BE6CED /* TSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5138F3217F883C00BE6CED /* TSError.swift */; };
+		EB853BFF2185DDD800885C70 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853BFE2185DDD800885C70 /* Tweet.swift */; };
+		EB853C012185DF0600885C70 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C002185DF0600885C70 /* TweetService.swift */; };
+		EB853C042185DF2400885C70 /* TweetServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C032185DF2400885C70 /* TweetServiceType.swift */; };
+		EB853C062185E0AF00885C70 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C052185E0AF00885C70 /* ServiceManager.swift */; };
+		EB853C072185E34600885C70 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C002185DF0600885C70 /* TweetService.swift */; };
+		EB853C082185E34900885C70 /* TweetServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C032185DF2400885C70 /* TweetServiceType.swift */; };
+		EB853C092185E34C00885C70 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C052185E0AF00885C70 /* ServiceManager.swift */; };
+		EB853C0A2185E46000885C70 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853BFE2185DDD800885C70 /* Tweet.swift */; };
+		EB853C0D2185E9C800885C70 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C0B2185E9C700885C70 /* TweetCell.swift */; };
+		EB853C0E2185E9C800885C70 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C0B2185E9C700885C70 /* TweetCell.swift */; };
+		EB853C0F2185E9C800885C70 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB853C0C2185E9C700885C70 /* TweetCell.xib */; };
+		EB853C102185E9C800885C70 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB853C0C2185E9C700885C70 /* TweetCell.xib */; };
+		EB853C122185EACD00885C70 /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C112185EACD00885C70 /* Date+Additions.swift */; };
+		EB853C132185EACD00885C70 /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB853C112185EACD00885C70 /* Date+Additions.swift */; };
 		EBE19DD5217F599800DC0C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE19DD4217F599800DC0C16 /* AppDelegate.swift */; };
 		EBE19DDA217F599800DC0C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE19DD8217F599800DC0C16 /* Main.storyboard */; };
 		EBE19DDC217F599900DC0C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE19DDB217F599900DC0C16 /* Assets.xcassets */; };
@@ -114,6 +128,13 @@
 		EB4C22D32182388500A70AED /* UIViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
 		EB4C22E421823B9E00A70AED /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		EB5138F3217F883C00BE6CED /* TSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSError.swift; sourceTree = "<group>"; };
+		EB853BFE2185DDD800885C70 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		EB853C002185DF0600885C70 /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
+		EB853C032185DF2400885C70 /* TweetServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetServiceType.swift; sourceTree = "<group>"; };
+		EB853C052185E0AF00885C70 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		EB853C0B2185E9C700885C70 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		EB853C0C2185E9C700885C70 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		EB853C112185EACD00885C70 /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
 		EBE19DD1217F599800DC0C16 /* TweetSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE19DD4217F599800DC0C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE19DD9217F599800DC0C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				EB1D99A821839DC5006E67F2 /* TweetTextView.swift */,
+				EB853C0B2185E9C700885C70 /* TweetCell.swift */,
+				EB853C0C2185E9C700885C70 /* TweetCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +227,8 @@
 		EB4C22B32182308100A70AED /* APP */ = {
 			isa = PBXGroup;
 			children = (
+				EB853C022185DF0C00885C70 /* Services */,
+				EB853BFD2185DDCA00885C70 /* Model */,
 				EB1D99A721839DB0006E67F2 /* Views */,
 				EB4C22B4218230B400A70AED /* TweetsHomeViewModel.swift */,
 				EB4C22B72182312100A70AED /* TweetsHomeViewController.swift */,
@@ -236,8 +261,27 @@
 				EB4C22D32182388500A70AED /* UIViewController+Additions.swift */,
 				EB4C22E421823B9E00A70AED /* UIView+extension.swift */,
 				EB1D99A421838F8E006E67F2 /* TextStyles.swift */,
+				EB853C112185EACD00885C70 /* Date+Additions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		EB853BFD2185DDCA00885C70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB853BFE2185DDD800885C70 /* Tweet.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB853C022185DF0C00885C70 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EB853C002185DF0600885C70 /* TweetService.swift */,
+				EB853C032185DF2400885C70 /* TweetServiceType.swift */,
+				EB853C052185E0AF00885C70 /* ServiceManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EBE19DC8217F599800DC0C16 = {
@@ -418,6 +462,7 @@
 				EB4C22C3218233CF00A70AED /* Montserrat-Black.otf in Resources */,
 				EB4C22C4218233CF00A70AED /* Montserrat-Bold.otf in Resources */,
 				EB4C22CD2182346100A70AED /* Colors.xcassets in Resources */,
+				EB853C0F2185E9C800885C70 /* TweetCell.xib in Resources */,
 				EB4C22C5218233CF00A70AED /* Montserrat-ExtraBold.otf in Resources */,
 				EB4C22C6218233CF00A70AED /* Montserrat-ExtraLight.otf in Resources */,
 				EB4C22C7218233CF00A70AED /* Montserrat-Light.otf in Resources */,
@@ -435,6 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB853C102185E9C800885C70 /* TweetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +525,7 @@
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBiBinding/RxBiBinding.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
@@ -494,6 +541,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBiBinding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
@@ -552,6 +600,7 @@
 				EB4C22D821823A1600A70AED /* SceneCoordinator.swift in Sources */,
 				EBE19E06217F5A3D00DC0C16 /* String+Tweetable.swift in Sources */,
 				EB1D99A521838F8E006E67F2 /* TextStyles.swift in Sources */,
+				EB853C062185E0AF00885C70 /* ServiceManager.swift in Sources */,
 				EBE19DD5217F599800DC0C16 /* AppDelegate.swift in Sources */,
 				EB4C22D921823A1B00A70AED /* SceneTransitionType.swift in Sources */,
 				EB5138F4217F883C00BE6CED /* TSError.swift in Sources */,
@@ -560,11 +609,16 @@
 				EB4C22B5218230B400A70AED /* TweetsHomeViewModel.swift in Sources */,
 				EB4C22D621823A0F00A70AED /* Scene.swift in Sources */,
 				EB4C22DE21823A3000A70AED /* UIViewController+Additions.swift in Sources */,
+				EB853BFF2185DDD800885C70 /* Tweet.swift in Sources */,
 				EB4C22D721823A1200A70AED /* Scene+ViewController.swift in Sources */,
 				EB4C22E521823B9E00A70AED /* UIView+extension.swift in Sources */,
+				EB853C122185EACD00885C70 /* Date+Additions.swift in Sources */,
+				EB853C012185DF0600885C70 /* TweetService.swift in Sources */,
 				EB4C22B82182312100A70AED /* TweetsHomeViewController.swift in Sources */,
 				EB4C22DC21823A2A00A70AED /* UIFont+Additions.swift in Sources */,
+				EB853C0D2185E9C800885C70 /* TweetCell.swift in Sources */,
 				EB4C22DD21823A2D00A70AED /* UINavigationController+Rx.swift in Sources */,
+				EB853C042185DF2400885C70 /* TweetServiceType.swift in Sources */,
 				EB4C22DA21823A1D00A70AED /* BindableType.swift in Sources */,
 				EB4C22D521823A0700A70AED /* SceneCoordinatorType.swift in Sources */,
 			);
@@ -577,8 +631,12 @@
 				EBE19E07217F5A3D00DC0C16 /* String+Tweetable.swift in Sources */,
 				EB1D999E218371B7006E67F2 /* TweetsHomeViewController.swift in Sources */,
 				EB1D99A621838F8E006E67F2 /* TextStyles.swift in Sources */,
+				EB853C0A2185E46000885C70 /* Tweet.swift in Sources */,
 				EB1D99A3218371BC006E67F2 /* UIView+extension.swift in Sources */,
+				EB853C082185E34900885C70 /* TweetServiceType.swift in Sources */,
+				EB853C132185EACD00885C70 /* Date+Additions.swift in Sources */,
 				EB1D999B218371AF006E67F2 /* SceneCoordinatorType.swift in Sources */,
+				EB853C0E2185E9C800885C70 /* TweetCell.swift in Sources */,
 				EB4C22B6218230B400A70AED /* TweetsHomeViewModel.swift in Sources */,
 				EB1D9998218371AF006E67F2 /* Scene.swift in Sources */,
 				EB1D999F218371BC006E67F2 /* UIColor+Additions.swift in Sources */,
@@ -591,6 +649,8 @@
 				EB1D99A1218371BC006E67F2 /* UINavigationController+Rx.swift in Sources */,
 				EB42AB192181CA8E0014CBD6 /* TSError.swift in Sources */,
 				EB1D999C218371AF006E67F2 /* SceneTransitionType.swift in Sources */,
+				EB853C072185E34600885C70 /* TweetService.swift in Sources */,
+				EB853C092185E34C00885C70 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

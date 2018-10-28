@@ -16,6 +16,7 @@ target 'TweetSplit' do
   pod 'RxOptional', '~> 3.5.0'
   pod 'RxRealmDataSources', '~> 0.2.9'
   pod 'RxGesture', '~> 2.0.1'
+  pod 'RxBiBinding'
 
   target 'TweetSplitTests' do
     inherit! :search_paths

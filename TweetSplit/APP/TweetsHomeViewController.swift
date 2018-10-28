@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 import RxOptional
+import RxRealmDataSources
+import RxBiBinding
 
 class TweetsHomeViewController: UIViewController, BindableType {
     @IBOutlet weak var tableView:UITableView!
@@ -20,8 +22,9 @@ class TweetsHomeViewController: UIViewController, BindableType {
     @IBOutlet weak var vMessageContainer: UIView!
     @IBOutlet weak var lblStatus: UILabel!
 
-    var viewModel: TweetsHomeViewModel!
     var messagePlaceholder : UILabel!
+    var viewModel: TweetsHomeViewModel!
+    var tweetsDataSource: RxTableViewRealmDataSource<Tweet>!
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -30,26 +33,13 @@ class TweetsHomeViewController: UIViewController, BindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-    }
-    
-    func initUI(){
-        addMessagePlaceholder()
-        
-        tableView.transform = CGAffineTransform(scaleX: 1, y: -1);          //Invert table up-side-down
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 120
-        
-        tvMessage.layer.borderWidth = 0.5
-        tvMessage.layer.borderColor = UIColor(white: 0.75, alpha: 1.0).cgColor
-        tvMessage.textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
-
-//        let nc = NotificationCenter.default
-//        nc.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        nc.addObserver(self, selector:#selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        configureDataSource()
     }
     
     func bindViewModel() {
-        let messageObserver = tvMessage.rx.text
+        (tvMessage.rx.text <-> viewModel.tweetMessage).disposed(by: rx.disposeBag)
+        
+        let messageObserver = viewModel.tweetMessage.asObservable()
             .filterNil()
             .distinctUntilChanged()
             .do(onNext:{[weak self]_ in
@@ -58,7 +48,7 @@ class TweetsHomeViewController: UIViewController, BindableType {
             .flatMap{message -> TweetObservable in
                 message.getTweetObservable(limit: 50)
             }
-            .share()
+            .share()   //Send will have last event when clicked
         
         messageObserver
             .map{$0.subTweets}
@@ -86,6 +76,61 @@ class TweetsHomeViewController: UIViewController, BindableType {
             .map{$0.message.isEmpty ? false : true}
             .bind(to: messagePlaceholder.rx.isHidden)
             .disposed(by: rx.disposeBag)
+        
+        
+        //Post tweets        
+        btnSend.rx.tap
+            .flatMap{[weak self] _ -> Observable<[String]> in
+                do {
+                    let subTweets = try self?.tvMessage.text.splitMessage(limit: 50) ?? []
+                    return Observable.of(subTweets)
+                }catch let error{
+                    return .error(error)
+                }
+            }
+            .filterEmpty()
+            .subscribe(onNext:{ [weak self] tweets in
+                self?.viewModel.actionPostTweets.execute(tweets)
+            })
+            .disposed(by: rx.disposeBag)
+        
+        //Reset when tweet is posted
+        viewModel.actionPostTweets.executing
+            .skip(1)
+            .filter{$0 == false}
+            .subscribe(onNext:{[weak self] _ in
+                self?.viewModel.tweetMessage.accept("")
+            })
+            .disposed(by: rx.disposeBag)
+        
+        //Setup tweets Tableview
+        viewModel.tweetsChangeSet
+            .bind(to: tableView.rx.realmChanges(tweetsDataSource))
+            .disposed(by: rx.disposeBag)
+    }
+    
+    fileprivate func configureDataSource() {
+        tweetsDataSource = RxTableViewRealmDataSource<Tweet>(cellIdentifier: "TweetCell", cellType: TweetCell.self) { cell, ip, tweet in
+            cell.configure(with: tweet, at:ip)
+            cell.transform = CGAffineTransform(scaleX: 1, y: -1)
+        }
+    }
+    
+    func initUI(){
+        TweetCell.registerCellIdentifier(tableView)
+        addMessagePlaceholder()
+        
+        tableView.transform = CGAffineTransform(scaleX: 1, y: -1);          //Invert table up-side-down
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 120
+        
+        tvMessage.layer.borderWidth = 0.5
+        tvMessage.layer.borderColor = UIColor(white: 0.75, alpha: 1.0).cgColor
+        tvMessage.textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
+        
+        //        let nc = NotificationCenter.default
+        //        nc.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        //        nc.addObserver(self, selector:#selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{

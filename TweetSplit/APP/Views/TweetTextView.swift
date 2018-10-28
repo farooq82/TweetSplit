@@ -9,7 +9,7 @@
 import UIKit
 
 class TweetTextView:UITextView{
-    var width:CGFloat = 200.0
+    var width:CGFloat = 200.0           //Initial width
     
     override var intrinsicContentSize : CGSize {
         let textHeight = self.sizeThatFits(CGSize(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height

@@ -53,7 +53,7 @@ extension AppDelegate{
     
     func initializeAppEngine(){
         self.sceneCoordinator = SceneCoordinator(window: self.window!)
-        let viewModel = TweetsHomeViewModel(coordinator: self.sceneCoordinator)
+        let viewModel = TweetsHomeViewModel(coordinator: self.sceneCoordinator, tweetService: TweetService())
         self.sceneCoordinator.transition(to: Scene.home(viewModel), type: .root)
     }
     
